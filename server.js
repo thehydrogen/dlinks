@@ -1,6 +1,6 @@
 // DLinks by Anidox
 
-var express = require('express'), app = express(), config = require('./config.json'), log = require('./logger.js'), Enmap = require('enmap'), EnmapLevel = require('enmap-level'), db = new Enmap({ provider: new EnmapLevel({ name: 'db' }) }), bodyParser = require('body-parser'), request = require('request-promise-native');
+var express = require('express'), app = express(), config = require('./config.js'), log = require('./logger.js'), Enmap = require('enmap'), EnmapLevel = require('enmap-level'), db = new Enmap({ provider: new EnmapLevel({ name: 'db' }) }), bodyParser = require('body-parser'), request = require('request-promise-native');
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
