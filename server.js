@@ -2,7 +2,15 @@
   DLinks by Anidox. Avaliable on GitHub at https://github.com/theanidox/dlinks
   Make sure to modify your configuration file to match the appropriate info for your self-host.
 */
-var express = require('express'), app = express(), config = require('./config.js'), log = require('./logger.js'), Enmap = require('enmap'), EnmapLevel = require('enmap-level'), db = new Enmap({ provider: new EnmapLevel({ name: 'db' }) }), bodyParser = require('body-parser'), request = require('request-promise-native');
+var express = require('express'), app = express(), config = require('./config.js'), log = require('./logger.js'), Enmap = require('enmap'), EnmapLevel = require('enmap-level'), db = new Enmap({ provider: new EnmapLevel({ name: 'db' }) }), bodyParser = require('body-parser'), request = require('request-promise-native'), figlet = require("figlet");
+
+figlet(config.title, async(err, res) => {
+  if(err) {
+    return;
+  } else {
+    console.log(res);
+  }
+});
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
